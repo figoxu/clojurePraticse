@@ -13,5 +13,17 @@
                  [:textarea { :row 10 :cols 40}]
                  ))
 
+(defn show-guests []
+  (:ul.guests
+    (for [{:keys [message name timestamp]}
+          [{:message "Howdy" :name "Bod" :timestamp nil}
+           {:message "Hello" :name "Bob" :timestamp nil}]]
+          [:li
+            [:blockquote message]
+           [:p "-" [:cite name]]
+           ]
+      )))
+
+
 (defroutes home-routes
-  (GET "/" [] (home)))
+           (GET "/" [] (home)))
