@@ -14,3 +14,9 @@
   (def two (ma/amount-of mc/USD 2))
   (ma/total [two two two two])
   )
+
+((defn tryUUID
+  "生成UUID"
+  []
+   (java.util.UUID/randomUUID)
+  ))
